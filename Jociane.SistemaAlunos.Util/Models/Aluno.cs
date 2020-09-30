@@ -12,5 +12,6 @@ namespace Jociane.SistemaAlunos.Util.Models
         public Curso Curso { get; set; }
 
         public virtual ICollection<MateriaAluno> MateriaAlunos { get; set; } = new HashSet<MateriaAluno>();
+
     }
 }

@@ -20,16 +20,25 @@ namespace Jociane.SistemaAlunos.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=NT-04837\\SQLEXPRESS;Initial Catalog=MeuBanquinho;Integrated Security=True;MultipleActiveResultSets=True");
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Data Source=NT-04837\\SQLEXPRESS;Initial Catalog=MeuBanquinho;Integrated Security=True");
+            }
+            base.OnConfiguring(optionsBuilder);
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
+           // modelBuilder.ApplyConfigurationsFromAssembly(typeof(MeuBanquinhoContext).Assembly);
 
-            //Definindo foreginKey muitos pra muitos
-            modelBuilder.Entity<MateriaCurso>().HasKey(sc => new { sc.CursoId, sc.MateriaId });           
-            modelBuilder.Entity<MateriaAluno>().HasKey(sc => new { sc.AlunoId, sc.MateriaId });
+            
+           modelBuilder.Entity<MateriaCurso>().HasKey(sc => new { sc.CursoId, sc.MateriaId }); 
+            
+           modelBuilder.Entity<MateriaAluno>().HasKey(sc => new { sc.AlunoId, sc.MateriaId });
+          
+
+           
 
         }
         public DbSet<Aluno> Alunos { get; set; }
@@ -37,6 +46,7 @@ namespace Jociane.SistemaAlunos.Context
         public DbSet<Professor> Professores { get; set; }
         public DbSet<Materia> Materias { get; set; }
         public DbSet<Administrador> Administradores { get; set; }
+
 
     }
 }

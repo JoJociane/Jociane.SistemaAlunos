@@ -13,6 +13,6 @@ namespace Jociane.SistemaAlunos.Util.Models
         [IgnoreDataMember]
         public ICollection<Aluno> Alunos { get; set; } = new HashSet<Aluno>();
 
-        public virtual ICollection<MateriaCurso> Materias { get; set; } = new HashSet<MateriaCurso>();
+        public virtual ICollection<MateriaCurso> MateriaCurso { get; set; } = new HashSet<MateriaCurso>();
     }
 }
