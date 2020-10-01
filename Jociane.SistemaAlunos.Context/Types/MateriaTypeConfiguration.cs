@@ -14,7 +14,7 @@ namespace Jociane.SistemaAlunos.Context.Types
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Nome).IsRequired().HasMaxLength(80);
-
+            // a materia tem um professor, com a fk professorid
             builder.HasOne(x => x.Professor).WithMany().HasForeignKey(x => x.ProfessorId);
         }
     }

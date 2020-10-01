@@ -19,7 +19,7 @@ namespace Jociane.SistemaAlunos.Context.Types
             builder.Property(x => x.Senha).IsRequired().HasMaxLength(12);
             builder.Property(x => x.Login).IsRequired().HasMaxLength(20);
             //aluno tem um curso, com a fk cursoid
-            builder.HasOne(x => x.Curso).WithMany().HasForeignKey(x => x.CursoId);//mudei b=>b.Alunos
+            builder.HasOne(x => x.Curso).WithMany().HasForeignKey(x => x.CursoId);
         }
     }
 }

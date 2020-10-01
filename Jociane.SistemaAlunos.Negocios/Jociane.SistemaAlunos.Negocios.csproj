@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jociane.SistemaAlunos.Context\Jociane.SistemaAlunos.Context.csproj" />
+    <ProjectReference Include="..\Jociane.SistemaAlunos.Util\Jociane.SistemaAlunos.Util.csproj" />
+  </ItemGroup>
+
+</Project>

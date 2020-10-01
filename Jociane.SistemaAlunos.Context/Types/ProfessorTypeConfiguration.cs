@@ -18,7 +18,7 @@ namespace Jociane.SistemaAlunos.Context.Types
             builder.Property(x => x.CPF).IsRequired().HasMaxLength(16);
             builder.Property(x => x.Senha).IsRequired().HasMaxLength(12);
             builder.Property(x => x.Login).IsRequired().HasMaxLength(20);
-
+            // um professor pode ter várias materias
             builder.HasMany(q => q.Materia).WithOne().HasForeignKey(q => q.ProfessorId);
         }
     }

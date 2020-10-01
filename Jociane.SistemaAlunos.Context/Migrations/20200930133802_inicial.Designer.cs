@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Jociane.SistemaAlunos.Context.Migrations
 {
     [DbContext(typeof(MeuBanquinhoContext))]
-    [Migration("20200929191040_inicial")]
+    [Migration("20200930133802_inicial")]
     partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

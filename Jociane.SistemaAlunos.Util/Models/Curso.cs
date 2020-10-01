@@ -11,7 +11,7 @@ namespace Jociane.SistemaAlunos.Util.Models
 
         [JsonIgnore]
         [IgnoreDataMember]
-        public ICollection<Aluno> Alunos { get; set; } = new HashSet<Aluno>();
+        public virtual ICollection<Aluno> Alunos { get; set; } = new HashSet<Aluno>();
 
         public virtual ICollection<MateriaCurso> MateriaCurso { get; set; } = new HashSet<MateriaCurso>();
     }

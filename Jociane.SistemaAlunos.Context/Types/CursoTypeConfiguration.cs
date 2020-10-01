@@ -13,8 +13,8 @@ namespace Jociane.SistemaAlunos.Context.Types
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Nome).IsRequired().HasMaxLength(100);
-            
-            builder.HasMany(q => q.Alunos).WithOne().HasForeignKey(q => q.CursoId);//??
+            // curso tem muitos alunos
+            builder.HasMany(q => q.Alunos).WithOne().HasForeignKey(q => q.CursoId); //uma maneira de referenciar a collection 1:n?
 
         }
     }
